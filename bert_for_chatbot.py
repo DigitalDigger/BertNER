@@ -113,7 +113,7 @@ def classifyWithBert(fileContents, data1):
     
     for ner in mergedNERs:
         print(ner)
-        if ner[1] == 'B-FAC' or ner[1] == 'B-ORG' or ner[1] == 'B-GPE' or ner[1] == 'B-NORP':
+        if ner[1] == 'B-FAC' or ner[1] == 'B-ORG' or ner[1] == 'B-GPE' or ner[1] == 'B-NORP' or ner[1] == 'B-LOC':
             print(ner)
             data1['Location'] = ner[0]
         elif ner[1] == 'B-DATE':
