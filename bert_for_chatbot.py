@@ -7,6 +7,7 @@ import copy
 import requests
 import numpy as np
 
+ner_model = build_model(configs.ner.ner_ontonotes_bert, download=False)
 
 def combineNERTuples(itemlist, extractedNERs):
     for sentIdx in range(len(itemlist[0])):
@@ -88,7 +89,6 @@ def classifyWithBert(fileContents, data1):
     #startJVM(getDefaultJVMPath(), "-ea")
     #java.lang.System.out.println("hello world")
     #shutdownJVM()
-    ner_model = build_model(configs.ner.ner_ontonotes_bert, download=False)
     sents = sent_tokenize(fileContents)
     sents = ner_model(sents)
     extractedNERs = []
