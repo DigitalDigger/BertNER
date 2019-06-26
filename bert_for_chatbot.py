@@ -7,7 +7,9 @@ import copy
 import requests
 import numpy as np
 
-ner_model = build_model(configs.ner.ner_ontonotes_bert, download=False)
+
+#ner_model = build_model(configs.ner.ner_ontonotes_bert, download=False)
+ner_model = build_model(configs.ner.ner_conll2003_bert, download=False)
 
 def combineNERTuples(itemlist, extractedNERs):
     for sentIdx in range(len(itemlist[0])):
